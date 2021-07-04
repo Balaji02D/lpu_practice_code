@@ -46,3 +46,19 @@ int t = 0;
 cout<<isPresent(arr,7,t);
 	return 0;
 }
+
+
+//other method for same question
+ListNode* middleNode(ListNode* head) {
+        ListNode* slow = head;
+        ListNode* fast = head->next;
+        
+        while(fast != NULL){
+            if(fast->next == NULL){
+                return slow->next;
+            }
+            slow = slow->next;
+            fast = fast->next->next;
+        }
+        return slow;
+    }
